@@ -1,6 +1,9 @@
 package main;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.FlowLayout;
+import java.awt.GridLayout;
 
 import javax.swing.JPanel;
 import javax.swing.JTextField;
@@ -16,19 +19,22 @@ public class MainPanel extends JPanel{
 	
 	
 	JTextField answerBox;
+	JPanel specialCharacterP;
+	JPanel answerBoxP;
+	
 	
 	MainPanel(){
 		
 		answerBox = new JTextField();
 		
-		this.setBounds(65,55, 675, 650);
+		this.setSize(500, 500);
 		this.setBackground(new Color(197, 216, 157));
-		this.setLayout(null);
+		this.setLayout(new BorderLayout());
 		
 		answerBox.setBounds(175,300,400,100);
 		answerBox.setBackground(new Color(246,240,215));
 		
-		this.add(answerBox);
+		this.add(answerBox,BorderLayout.CENTER);
 		
 		
 	}
