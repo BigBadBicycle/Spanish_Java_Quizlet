@@ -2,9 +2,10 @@ package main;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.FlowLayout;
-import java.awt.GridLayout;
+import java.awt.Dimension;
+import java.awt.Font;
 
+import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
@@ -16,25 +17,39 @@ public class MainPanel extends JPanel{
 	 * Greens: (197, 216, 157), (156, 171, 132), (137, 152, 109)
 	 * 
 	 */
+	private final String A_ACCENT = "\u00E1";
+	private final String E_ACCENT = "\u00E9";
+	private final String I_ACCENT = "u00E1";
+	private final String O_ACCENT = "u00E1";
+	private final String U_ACCENT = "u00E1";
+	
+	private JTextField answerBox;
+	private JPanel TopPanel;
+	private JPanel BottomPanel;
+	
+	private BorderLayout layout = new BorderLayout();
 	
 	
-	JTextField answerBox;
-	JPanel specialCharacterP;
-	JPanel answerBoxP;
-	
-	
-	MainPanel(){
+	MainPanel(QuizletFrame pFrame){
 		
 		answerBox = new JTextField();
+		TopPanel = new JPanel();
+		BottomPanel = new JPanel();
 		
 		this.setSize(500, 500);
 		this.setBackground(new Color(197, 216, 157));
-		this.setLayout(new BorderLayout());
-		
-		answerBox.setBounds(175,300,400,100);
+		this.setLayout(layout);
+
 		answerBox.setBackground(new Color(246,240,215));
+		answerBox.setFont(new Font("Roboto",Font.BOLD, 20));
+		
+		TopPanel.setPreferredSize(new Dimension(pFrame.getWidth(), 200));
+		BottomPanel.setPreferredSize(new Dimension(pFrame.getWidth(), 200));
 		
 		this.add(answerBox,BorderLayout.CENTER);
+		this.add(TopPanel, BorderLayout.NORTH);
+		this.add(BottomPanel, BorderLayout.SOUTH);
+		
 		
 		
 	}

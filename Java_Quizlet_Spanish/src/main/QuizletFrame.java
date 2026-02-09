@@ -20,7 +20,7 @@ public class QuizletFrame extends JFrame{
 		this.setLayout(border);
 		this.setTitle("Spanish Studying!");
 		
-		this.add(new MainPanel(), BorderLayout.CENTER);
+		this.add(new MainPanel(this), BorderLayout.CENTER);
 		
 		JPanel[] outer = new JPanel[4];
 		for(int i =0; i<4; i++) {
