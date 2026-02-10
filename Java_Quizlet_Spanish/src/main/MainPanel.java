@@ -24,19 +24,22 @@ public class MainPanel extends JPanel implements ActionListener{
 	private static final String I_ACCENT = "\u00ED";
 	private static final String O_ACCENT = "\u00F3";
 	private static final String U_ACCENT = "\u00FA";
-	private static final String ENYA = "\u00F1";
+	private static final String ENYAY = "\u00F1";
 	
 	private JTextField answerBox;
 	private JPanel TopPanel;
 	private JPanel BottomPanel;
 	
-	JButton[] buttons;
+	private JButton[] buttons;
 	
 	private BorderLayout layout = new BorderLayout();
+	
+	private QuizletFrame pFrame;
 	
 	
 	MainPanel(QuizletFrame pFrame){
 		
+		this.pFrame = pFrame;
 		answerBox = new JTextField();
 		TopPanel = new JPanel();
 		BottomPanel = new JPanel();
@@ -47,6 +50,7 @@ public class MainPanel extends JPanel implements ActionListener{
 
 		answerBox.setBackground(new Color(246,240,215));
 		answerBox.setFont(new Font("Roboto",Font.BOLD, 20));
+		answerBox.addActionListener(this);
 		
 		TopPanel.setPreferredSize(new Dimension(pFrame.getWidth(), 200));
 		TopPanel.setBackground(new Color(197, 216, 157));
@@ -54,13 +58,14 @@ public class MainPanel extends JPanel implements ActionListener{
 		BottomPanel.setBackground(new Color(197, 216, 157));
 		
 		
-		buttons = new JButton[6];
+		buttons = new JButton[7];
 		buttons[0] = new JButton(A_ACCENT);
 		buttons[1] = new JButton(E_ACCENT);
 		buttons[2] = new JButton(I_ACCENT);
 		buttons[3] = new JButton(O_ACCENT);
 		buttons[4] = new JButton(U_ACCENT);
-		buttons[5] = new JButton(ENYA);
+		buttons[5] = new JButton(ENYAY);
+		buttons[6] = new JButton("Menu");
 		
 		for(int i = 0; i<buttons.length; i++) {
 			buttons[i].setFont(new Font("Roboto",Font.BOLD, 15));
@@ -95,10 +100,13 @@ public class MainPanel extends JPanel implements ActionListener{
 			answerBox.setText(answerBox.getText()+U_ACCENT);
 		}
 		if(e.getSource()== buttons[5]) {
-			answerBox.setText(answerBox.getText()+ENYA);
+			answerBox.setText(answerBox.getText()+ENYAY);
+		}
+		if(e.getSource()== buttons[6]) {
+			
 		}
 		if(e.getSource() == answerBox) {
-			System.out.println("Entered");
+			pFrame.switchToMenu();
 		}
 	}
 
