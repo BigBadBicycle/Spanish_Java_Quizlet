@@ -17,11 +17,12 @@ public class MainPanel extends JPanel{
 	 * Greens: (197, 216, 157), (156, 171, 132), (137, 152, 109)
 	 * 
 	 */
-	private final String A_ACCENT = "\u00E1";
-	private final String E_ACCENT = "\u00E9";
-	private final String I_ACCENT = "u00E1";
-	private final String O_ACCENT = "u00E1";
-	private final String U_ACCENT = "u00E1";
+	private static final String A_ACCENT = "\u00E1";
+	private static final String E_ACCENT = "\u00E9";
+	private static final String I_ACCENT = "\u00ED";
+	private static final String O_ACCENT = "\u00F3";
+	private static final String U_ACCENT = "\u00FA";
+	private static final String ENYA = "\u00F1";
 	
 	private JTextField answerBox;
 	private JPanel TopPanel;
@@ -44,7 +45,9 @@ public class MainPanel extends JPanel{
 		answerBox.setFont(new Font("Roboto",Font.BOLD, 20));
 		
 		TopPanel.setPreferredSize(new Dimension(pFrame.getWidth(), 200));
-		BottomPanel.setPreferredSize(new Dimension(pFrame.getWidth(), 200));
+		TopPanel.setBackground(new Color(197, 216, 157));
+		BottomPanel.setPreferredSize(new Dimension(pFrame.getWidth(), 150));
+		BottomPanel.setBackground(new Color(197, 216, 157));
 		
 		this.add(answerBox,BorderLayout.CENTER);
 		this.add(TopPanel, BorderLayout.NORTH);
