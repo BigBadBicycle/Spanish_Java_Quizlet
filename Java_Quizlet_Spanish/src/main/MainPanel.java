@@ -4,12 +4,14 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-public class MainPanel extends JPanel{
+public class MainPanel extends JPanel implements ActionListener{
 	
 	/*Colors to use:
 	 * 
@@ -27,6 +29,8 @@ public class MainPanel extends JPanel{
 	private JTextField answerBox;
 	private JPanel TopPanel;
 	private JPanel BottomPanel;
+	
+	JButton[] buttons;
 	
 	private BorderLayout layout = new BorderLayout();
 	
@@ -49,12 +53,53 @@ public class MainPanel extends JPanel{
 		BottomPanel.setPreferredSize(new Dimension(pFrame.getWidth(), 150));
 		BottomPanel.setBackground(new Color(197, 216, 157));
 		
+		
+		buttons = new JButton[6];
+		buttons[0] = new JButton(A_ACCENT);
+		buttons[1] = new JButton(E_ACCENT);
+		buttons[2] = new JButton(I_ACCENT);
+		buttons[3] = new JButton(O_ACCENT);
+		buttons[4] = new JButton(U_ACCENT);
+		buttons[5] = new JButton(ENYA);
+		
+		for(int i = 0; i<buttons.length; i++) {
+			buttons[i].setFont(new Font("Roboto",Font.BOLD, 15));
+			buttons[i].setFocusable(false);
+			buttons[i].setBackground(new Color(246,240,215));
+			buttons[i].addActionListener(this);
+			BottomPanel.add(buttons[i]);
+		}
+		
 		this.add(answerBox,BorderLayout.CENTER);
 		this.add(TopPanel, BorderLayout.NORTH);
 		this.add(BottomPanel, BorderLayout.SOUTH);
 		
-		
-		
+	}
+
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		if(e.getSource()== buttons[0]) {
+			answerBox.setText(answerBox.getText()+A_ACCENT);
+		}
+		if(e.getSource()== buttons[1]) {
+			answerBox.setText(answerBox.getText()+E_ACCENT);
+		}
+		if(e.getSource()== buttons[2]) {
+			answerBox.setText(answerBox.getText()+I_ACCENT);
+		}
+		if(e.getSource()== buttons[3]) {
+			answerBox.setText(answerBox.getText()+O_ACCENT);
+		}
+		if(e.getSource()== buttons[4]) {
+			answerBox.setText(answerBox.getText()+U_ACCENT);
+		}
+		if(e.getSource()== buttons[5]) {
+			answerBox.setText(answerBox.getText()+ENYA);
+		}
+		if(e.getSource() == answerBox) {
+			System.out.println("Entered");
+		}
 	}
 
 }
