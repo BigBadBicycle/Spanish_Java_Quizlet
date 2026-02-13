@@ -103,10 +103,10 @@ public class MainPanel extends JPanel implements ActionListener{
 			answerBox.setText(answerBox.getText()+ENYAY);
 		}
 		if(e.getSource()== buttons[6]) {
-			
+			pFrame.switchToMenu();
 		}
 		if(e.getSource() == answerBox) {
-			pFrame.switchToMenu();
+
 		}
 	}
 

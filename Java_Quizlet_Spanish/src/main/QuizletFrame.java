@@ -17,7 +17,7 @@ public class QuizletFrame extends JFrame{
 		
 		BorderLayout border = new BorderLayout();
 		main = new MainPanel(this);
-		menu = new MenuPanel();
+		menu = new MenuPanel(this);
 		frame = this;
 		
 		this.setSize(700,700);
@@ -27,7 +27,7 @@ public class QuizletFrame extends JFrame{
 		this.setLayout(border);
 		this.setTitle("Spanish Studying!");
 		
-		this.add(main, BorderLayout.CENTER);
+		this.add(menu, BorderLayout.CENTER);
 		
 		JPanel[] outer = new JPanel[4];
 		for(int i =0; i<4; i++) {
