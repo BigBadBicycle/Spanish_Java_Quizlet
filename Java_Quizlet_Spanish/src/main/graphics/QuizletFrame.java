@@ -1,4 +1,4 @@
-package main;
+package main.graphics;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -13,7 +13,7 @@ public class QuizletFrame extends JFrame{
 	private MainPanel main;
 	private MenuPanel menu;
 	
-	QuizletFrame(){
+	public QuizletFrame(){
 		
 		BorderLayout border = new BorderLayout();
 		main = new MainPanel(this);

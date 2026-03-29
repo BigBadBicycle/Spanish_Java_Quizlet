@@ -1,1 +1,101 @@
-verb,definition,isIrregular|,|Present (yo),Present (tu),Present (el),Present (nos),Present (ellos)|,|Preterite (yo),Preterite (tu),Preterite (el),Preterite (nos),Preterite (ellos)|,|Imperfect (yo),Imperfect (tu),Imperfect (el),Imperfect (nos),Imperfect (ellos)|
+number,verb,definition
+1,abrir,to open
+2,acabar,to finish/end
+3,aceptar,to accept
+4,alcanzar,to reach
+5,aparecer,to appear
+6,ayudar,to help
+7,buscar,to look for
+8,caer,to fall
+9,cambiar,to change
+10,comenzar,to begin
+11,comprender,to understand
+12,conocer,to know/meet
+13,conseguir,to get
+14,considerar,to consider
+15,contar,to count
+16,convertir,to convert/change
+17,correr,to run
+18,crear,to create
+19,creer,to believe
+20,cumplir,to achieve
+21,dar,to give
+22,deber,to owe
+23,decir,to say
+24,dejar,to leave/allow
+25,descubrir,to discover
+26,dirigir,to direct
+27,empezar,to start
+28,encontrar,to find
+29,entender,to understand
+30,entrar,to enter
+31,escribir,to write
+32,escuchar,to listen
+33,esperar,to wait/hope
+34,estar,to be
+35,estudiar,to study
+36,existir,to exist
+37,explicar,to explain
+38,formar,to form/make
+39,ganar,to earn/win
+40,gustar,to like
+41,haber,to have
+42,hablar,to speak/talk
+43,hacer,to do
+44,intentar,to try
+45,ir,to go
+46,jugar,to play
+47,leer,to read
+48,levantar,to get up/raise
+49,llamar,to call
+50,llegar,to arrive
+51,llevar,to carry
+52,lograr,to achieve/manage to
+53,mantener,to maintain/keep
+54,mirar,to watch/look at
+55,morir,to die
+56,nacer,to be born
+57,necesitar,to need
+58,ocurrir,to occur/happen
+59,ofrecer,to offer
+60,oír,to hear
+61,pagar,to pay
+62,parar,to stop
+63,parecer,to seem
+64,partir,to leave
+65,pasar,to happen/pass
+66,pedir,to ask for
+67,perder,to lose
+68,permitir,to permit/allow
+69,poder,to be able to
+70,poner,to put
+71,preguntar,to ask
+72,presentar,to introduce/present
+73,producir,to produce
+74,quedar,to stay
+75,querer,to want/love
+76,realizar,to achieve
+77,recibir,to receive
+78,reconocer,to recognize
+79,recordar,to remember
+80,resultar,to turn out
+81,saber,to know
+82,sacar,to take out
+83,salir,to go out
+84,seguir,to follow
+85,sentir,to feel
+86,ser,to be
+87,servir,to serve/function
+88,suponer,to suppose
+89,tener,to have
+90,terminar,to finish
+91,tocar,to touch/play
+92,tomar,to take
+93,trabajar,to work
+94,traer,to bring
+95,tratar,to treat
+96,utilizar,to use
+97,venir,to come
+98,ver,to see
+99,vivir,to live
+100,volver,to return/come back
