@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class AssetLoader {
 	
-	public static ArrayList<String[]> VERB_DEF_LIST = new ArrayList<String[]>(); 
+	public static ArrayList<String[]> VERB_DEF_LIST = new ArrayList<String[]>(); // .get(0)[0] = number / .get(0)[1] = verb / .get(0)[2] = definition
 	
 	
 	
@@ -19,8 +19,6 @@ public class AssetLoader {
 		
 		//loads files into lists
 		fileToList(vDF, VERB_DEF_LIST);
-		
-		System.out.println(VERB_DEF_LIST.size());
 		
 		
 	}

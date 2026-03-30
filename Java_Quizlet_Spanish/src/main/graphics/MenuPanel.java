@@ -15,6 +15,8 @@ import javax.swing.SwingConstants;
 
 public class MenuPanel extends JPanel implements ActionListener{
 	
+	QuizletFrame pFrame;
+	
 	private JButton verbDefB;
 	private JButton conjugationB;
 	
@@ -25,6 +27,8 @@ public class MenuPanel extends JPanel implements ActionListener{
 	private JButton[] ConjSettingsBs;
 	
 	MenuPanel(QuizletFrame pFrame){
+		
+		this.pFrame = pFrame;
 		
 		//constructs variables
 		Title = new JLabel();
@@ -59,6 +63,8 @@ public class MenuPanel extends JPanel implements ActionListener{
 		conjugationB.setFocusable(false);
 		verbDefB.setLabel("Verb Definition");
 		conjugationB.setLabel("Conjugation");
+		verbDefB.addActionListener(this);
+		conjugationB.addActionListener(this);
 		
 		//settings panel
 		settingsP.setPreferredSize(new Dimension(pFrame.getWidth(), 150));
@@ -80,6 +86,7 @@ public class MenuPanel extends JPanel implements ActionListener{
 			ConjSettingsBs[i].setFont(new Font("Roboto",Font.BOLD, 8));
 			ConjSettingsBs[i].setBackground(new Color(246,240,215));
 			ConjSettingsBs[i].setPreferredSize(new Dimension(100,50));
+			ConjSettingsBs[i].addActionListener(this);
 			settingsP.add(ConjSettingsBs[i]);
 		}
 		
@@ -112,7 +119,7 @@ public class MenuPanel extends JPanel implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		
 		if(e.getSource()== verbDefB) {
-			
+			pFrame.switchToVerbDef();
 		}
 		if(e.getSource()== conjugationB) {
 			

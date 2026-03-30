@@ -8,8 +8,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import javax.swing.SwingConstants;
 
 public class MainPanel extends JPanel implements ActionListener{
 	
@@ -26,11 +28,13 @@ public class MainPanel extends JPanel implements ActionListener{
 	private static final String U_ACCENT = "\u00FA";
 	private static final String ENYAY = "\u00F1";
 	
-	private JTextField answerBox;
+	protected JTextField answerBox;
 	private JPanel TopPanel;
 	private JPanel BottomPanel;
 	
-	private JButton[] buttons;
+	private JLabel question;
+	
+	protected JButton[] buttons;
 	
 	private BorderLayout layout = new BorderLayout();
 	
@@ -43,6 +47,7 @@ public class MainPanel extends JPanel implements ActionListener{
 		answerBox = new JTextField();
 		TopPanel = new JPanel();
 		BottomPanel = new JPanel();
+		question = new JLabel();
 		
 		this.setSize(500, 500);
 		this.setBackground(new Color(197, 216, 157));
@@ -52,13 +57,19 @@ public class MainPanel extends JPanel implements ActionListener{
 		answerBox.setFont(new Font("Roboto",Font.BOLD, 20));
 		answerBox.addActionListener(this);
 		
+		question.setPreferredSize(new Dimension(100,100));
+		question.setFont(new Font("Roboto",Font.BOLD, 20));
+		question.setHorizontalAlignment(SwingConstants.CENTER);
+		
 		TopPanel.setPreferredSize(new Dimension(pFrame.getWidth(), 200));
 		TopPanel.setBackground(new Color(197, 216, 157));
+		TopPanel.setLayout(new BorderLayout());
+		TopPanel.add(question,BorderLayout.CENTER);
+		
 		BottomPanel.setPreferredSize(new Dimension(pFrame.getWidth(), 150));
 		BottomPanel.setBackground(new Color(197, 216, 157));
 		
-		
-		buttons = new JButton[7];
+		buttons = new JButton[8];
 		buttons[0] = new JButton(A_ACCENT);
 		buttons[1] = new JButton(E_ACCENT);
 		buttons[2] = new JButton(I_ACCENT);
@@ -66,6 +77,7 @@ public class MainPanel extends JPanel implements ActionListener{
 		buttons[4] = new JButton(U_ACCENT);
 		buttons[5] = new JButton(ENYAY);
 		buttons[6] = new JButton("Menu");
+		buttons[7] = new JButton("Submit");
 		
 		for(int i = 0; i<buttons.length; i++) {
 			buttons[i].setFont(new Font("Roboto",Font.BOLD, 15));
@@ -105,9 +117,11 @@ public class MainPanel extends JPanel implements ActionListener{
 		if(e.getSource()== buttons[6]) {
 			pFrame.switchToMenu();
 		}
-		if(e.getSource() == answerBox) {
-
-		}
+	}
+	
+	protected void updateQuestionText(String x) {
+		question.setText(x);
+		this.repaint();
 	}
 
 }

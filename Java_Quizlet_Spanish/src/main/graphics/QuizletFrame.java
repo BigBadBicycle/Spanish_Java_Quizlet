@@ -11,12 +11,15 @@ public class QuizletFrame extends JFrame{
 	
 	private QuizletFrame frame;
 	private MainPanel main;
+	private VerbDefPanel vDP;
 	private MenuPanel menu;
+	private BorderLayout border;
 	
 	public QuizletFrame(){
 		
-		BorderLayout border = new BorderLayout();
+		border = new BorderLayout();
 		main = new MainPanel(this);
+		vDP = new VerbDefPanel(this);
 		menu = new MenuPanel(this);
 		frame = this;
 		
@@ -43,9 +46,21 @@ public class QuizletFrame extends JFrame{
 	}
 	
 	public void switchToMenu() {
-		frame.remove(main);
+		frame.remove(border.getLayoutComponent(frame.getContentPane(),BorderLayout.CENTER));
 		frame.add(menu, BorderLayout.CENTER);
 		frame.repaint();
+		menu.repaint();
+	}
+	
+	public void switchToConjugation() {
+		
+	}
+	
+	public void switchToVerbDef() {
+		frame.remove(border.getLayoutComponent(frame.getContentPane(),BorderLayout.CENTER));
+		frame.add(vDP, BorderLayout.CENTER);
+		frame.repaint();
+		vDP.repaint();
 	}
 	
 
