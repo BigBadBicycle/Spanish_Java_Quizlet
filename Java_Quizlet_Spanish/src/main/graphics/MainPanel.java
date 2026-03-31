@@ -33,6 +33,7 @@ public class MainPanel extends JPanel implements ActionListener{
 	private JPanel BottomPanel;
 	
 	private JLabel question;
+	private JLabel response;
 	
 	protected JButton[] buttons;
 	
@@ -48,6 +49,7 @@ public class MainPanel extends JPanel implements ActionListener{
 		TopPanel = new JPanel();
 		BottomPanel = new JPanel();
 		question = new JLabel();
+		response = new JLabel();
 		
 		this.setSize(500, 500);
 		this.setBackground(new Color(197, 216, 157));
@@ -61,10 +63,15 @@ public class MainPanel extends JPanel implements ActionListener{
 		question.setFont(new Font("Roboto",Font.BOLD, 20));
 		question.setHorizontalAlignment(SwingConstants.CENTER);
 		
+		response.setPreferredSize(new Dimension(100,100));
+		response.setFont(new Font("Roboto",Font.PLAIN, 15));
+		response.setHorizontalAlignment(SwingConstants.CENTER);
+		
 		TopPanel.setPreferredSize(new Dimension(pFrame.getWidth(), 200));
 		TopPanel.setBackground(new Color(197, 216, 157));
 		TopPanel.setLayout(new BorderLayout());
 		TopPanel.add(question,BorderLayout.CENTER);
+		TopPanel.add(response, BorderLayout.SOUTH);
 		
 		BottomPanel.setPreferredSize(new Dimension(pFrame.getWidth(), 150));
 		BottomPanel.setBackground(new Color(197, 216, 157));
@@ -121,6 +128,11 @@ public class MainPanel extends JPanel implements ActionListener{
 	
 	protected void updateQuestionText(String x) {
 		question.setText(x);
+		this.repaint();
+	}
+	
+	protected void updateResponseText(String x) {
+		response.setText(x);
 		this.repaint();
 	}
 
